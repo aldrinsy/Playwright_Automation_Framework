@@ -5,7 +5,6 @@ pipeline
     tools{
 		//Ito yung mga makikita sa TOOLS  (Configure tools, their locations and automatic installers.)
     	maven 'MAVEN_HOME'    // MAVEN_HOME: Ito yung name sa Maven installations while path nun is eto: C:\Program Files\apache-maven-3.9.9
-    	git 'GIT_BASH'         // GIT_BASH: Ito yung name sa Git Installation, while yung path nun is eto: C:\Program Files\Git\cmd\git.exe
         }
 
     stages 
