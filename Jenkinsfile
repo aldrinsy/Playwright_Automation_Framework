@@ -3,7 +3,9 @@ pipeline
     agent any
     
     tools{
-    	maven 'MAVEN_HOME'
+		//Ito yung mga makikita sa TOOLS  (Configure tools, their locations and automatic installers.)
+    	maven 'MAVEN_HOME'    // MAVEN_HOME: Ito yung name sa Maven installations while path nun is eto: C:\Program Files\apache-maven-3.9.9
+    	git 'GIT_BASH'         // GIT_BASH: Ito yung name sa Git Installation, while yung path nun is eto: C:\Program Files\Git\cmd\git.exe
         }
 
     stages 
@@ -27,8 +29,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/aldrinsy/Playwright_Automation_Framework'
-                    sh "mvn clean test"
-                   //sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regressions.xml"
+                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunners/testng_regressions.xml"
                     
                 }
             }
