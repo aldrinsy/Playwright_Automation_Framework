@@ -1,0 +1,102 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>PlaywrightFramework_Automation</groupId>
+	<artifactId>PlaywrightFramework_Automation</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>PlaywrightFramework_Automation</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>22</maven.compiler.source>
+		<maven.compiler.target>22</maven.compiler.target>
+		<maven.compiler.release>22</maven.compiler.release>
+
+		<!-- Dependency versions -->
+		<testng-version>7.10.2</testng-version>
+		<playwright.version>1.48.0</playwright.version>
+
+		<!-- Report versions -->
+		<extentreports-version>5.1.2</extentreports-version>
+
+		<!-- Other Dependency -->
+		<lombok.version>1.18.28</lombok.version>
+
+		<!-- Plugin versions -->
+		<maven-clean-plugin.version>3.3.1</maven-clean-plugin.version>
+		<maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+		<maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+		<maven-surefire-plugin.version>3.1.2</maven-surefire-plugin.version>
+
+
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.microsoft.playwright</groupId>
+			<artifactId>playwright</artifactId>
+			<version>${playwright.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${extentreports-version}</version>
+		</dependency>
+
+		<!-- Other Dependencies -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	<build>
+
+		<pluginManagement>
+			<plugins>
+				<!-- Maven Core Plugins -->
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>${maven-clean-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${maven-resources-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.version}</version>
+				</plugin>
+
+				<!-- Test Execution Plugin -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${maven-surefire-plugin.version}</version>
+
+					<configuration>
+						<forkCount>3</forkCount>
+						<reuseForks>true</reuseForks>
+						<suiteXmlFiles>
+							<suiteXmlFile>
+								src/test/resources/testrunners/testng_regressions.xml</suiteXmlFile>
+						</suiteXmlFiles>
+					</configuration>
+
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

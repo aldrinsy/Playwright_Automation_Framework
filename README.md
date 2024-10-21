@@ -1,1 +1,4 @@
-# Playwright_Automation_Framework
+#Playwright_Test_Framework
+This project is an automation testing framework built using Java Playwright, designed to streamline UI testing with a modern, scalable approach. The framework is structured using Maven for dependency management, TestNG for test execution, and ExtentReports for detailed reporting.
+
+Key Features: Page Object Model (POM) structure for maintainability and scalability Integrated with TestNG for flexible test configurations Generates ExtentReports for comprehensive test reporting Supports parallel execution and cross-browser testing with Playwright This framework is ideal for automating frontend tests, ensuring a robust and efficient way to validate web applications.
